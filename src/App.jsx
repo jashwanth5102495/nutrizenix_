@@ -103,20 +103,16 @@ export default function App() {
         />
       </motion.div>
 
-      {/* Watermark */}
-      <div className="fixed bottom-3 right-3 z-40 select-none pointer-events-none">
-        <div className="text-[11px] sm:text-xs text-gray-800/70 bg-white/70 rounded-full px-3 py-1 border border-white/80 shadow-sm">
-          made by Jasnav It Solutions
-        </div>
-      </div>
 
       {/* Glassmorphism main panel */}
       <div className="relative z-10 w-full max-w-2xl rounded-3xl bg-white/25 border border-white/40 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.12)] p-5 sm:p-6">
 
         {/* Page title (outside the white box) */}
-        <div className="text-center mb-2">
-          <ShinyText text="Nutreefy" speed={3} className="text-3xl sm:text-4xl font-extrabold tracking-wide" />
-        </div>
+         <div className="text-center mb-2">
+           <div className="text-3xl sm:text-4xl font-extrabold tracking-wide">
+             <ShinyText text="Nutreefy" speed={3} />
+           </div>
+         </div>
 
         {/* Logo video header */}
         <div className="rounded-2xl bg-white border border-white/60 px-4 py-6 sm:px-6 sm:py-8 text-gray-900">
