@@ -3,5 +3,8 @@
   "routes": [
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "redirects": [
+    { "source": "/Humus%20Carbon%20%2B%2B", "destination": "/HUMICID", "statusCode": 308 }
   ]
 }
