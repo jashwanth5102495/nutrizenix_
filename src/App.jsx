@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import StarBorder from './StarBorder.jsx';
 import './StarBorder.css';
+import { PRODUCTS, findProductBySlug } from './productsData.js';
 
 export default function App() {
   const [showDetails, setShowDetails] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
     const oldSlug = '/Humus%20Carbon%20%2B%2B';
@@ -12,7 +14,10 @@ export default function App() {
     if (window.location.pathname === oldSlug) {
       window.history.replaceState(null, '', newSlug);
     }
-    document.title = 'HUMICID — Product Information';
+    const rawPath = window.location.pathname.replace(/^\//, '');
+    const found = findProductBySlug(rawPath);
+    setProduct(found);
+    document.title = `${found.brand} — Product Information`;
   }, []);
 
 
@@ -62,7 +67,7 @@ export default function App() {
             </div>
             <div className="flex-1">
               <div className="text-[#d9c98f] text-xs sm:text-sm">Product Name:</div>
-              <div className="text-white text-xl sm:text-2xl font-semibold tracking-wide">HUMICID</div>
+              <div className="text-white text-xl sm:text-2xl font-semibold tracking-wide">{product?.brand || 'HUMICID'}</div>
             </div>
           </div>
         </section>
@@ -76,7 +81,7 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Gazette Notification:</div>
-                <div className="text-base sm:text-lg">SO:3922(E), Dated:12-09-2024</div>
+                <div className="text-base sm:text-lg">{product?.gazette || 'SO:3922(E), Dated:12-09-2024'}</div>
               </div>
             </div>
           </StarBorder>
@@ -88,7 +93,7 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Title of Bio Stimulant:</div>
-                <div className="text-base sm:text-lg">Humic Acid 5% (powder)</div>
+                <div className="text-base sm:text-lg">{product?.specification || 'Humic Acid 5% (Powder)'}</div>
               </div>
             </div>
           </StarBorder>
@@ -100,12 +105,7 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Composition</div>
-                <ul className="mt-1 space-y-1 list-disc pl-5 text-sm sm:text-base">
-                  <li>Humic Acid 5% (powder)</li>
-                  <li>Humic Acid 5% (powder)</li>
-                  <li>Polys affection</li>
-                  <li>PlsC irailicion</li>
-                </ul>
+                <div className="mt-1 text-sm sm:text-base text-white">{product?.specification || 'Humic Acid 5% (Powder)'}</div>
               </div>
             </div>
           </StarBorder>
@@ -117,7 +117,7 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Crops:</div>
-                <div className="text-base sm:text-lg">Chilli Pepper</div>
+                <div className="text-base sm:text-lg">{(product?.crops || ['Chilli Pepper']).join(', ')}</div>
               </div>
             </div>
           </StarBorder>
@@ -129,7 +129,15 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Dosage:</div>
-                <div className="text-base sm:text-lg">three foliar application at 0.5 g/L</div>
+                {product?.dosage?.length ? (
+                  <ul className="mt-1 space-y-1 text-sm sm:text-base">
+                    {product.dosage.map((d, i) => (
+                      <li key={i} className="text-white/90">{d}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <div className="text-base sm:text-lg">three foliar application at 0.5 g/L</div>
+                )}
               </div>
             </div>
           </StarBorder>
@@ -140,9 +148,24 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Manufactured By:</div>
-                <div className="text-base sm:text-lg">SUSTHIRA BIO ORGANICS LLP</div>
-                <div className="mt-2 text-[#d9c98f] text-sm">Marketing By:</div>
-                <div className="text-base sm:text-lg">N CHEM SCIENCES</div>
+                <div className="text-white/90 text-sm sm:text-base">SUSTHIRA BIO ORGANICS LLP</div>
+                <div className="text-white/80 text-xs sm:text-sm mt-1 leading-snug">
+                  No.1, Aswath Narayana Road,<br />
+                  Near Akshaya Nagar, Tirumala Nagar,<br />
+                  Attur, Yelahanka, Bangalore -560064
+                </div>
+
+                <div className="mt-3 text-[#d9c98f] text-sm">Marketed By:</div>
+                <div className="text-white/90 text-sm sm:text-base">N CHEM SCIENCES</div>
+                <div className="text-white/80 text-xs sm:text-sm mt-1 leading-snug">
+                  MPL No.14-1-20/7/18 9 26 27 & 36<br />
+                  38<br />
+                  Sadashiva Phase-III, Eklaspur Village<br />
+                  Bypass Manchalapur Road<br />
+                  Raichur - 584101<br />
+                  Raichur Dist<br />
+                  Karnataka State
+                </div>
               </div>
             </div>
           </StarBorder>
