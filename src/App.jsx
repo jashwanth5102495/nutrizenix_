@@ -7,7 +7,6 @@ export default function App() {
   const [showDetails, setShowDetails] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
   const [product, setProduct] = useState(null);
-  const [hasLogoVideo, setHasLogoVideo] = useState(false);
 
   useEffect(() => {
     const oldSlug = '/HUMICID';
@@ -26,11 +25,6 @@ export default function App() {
     document.title = `${found.brand} — Product Information`;
   }, []);
 
-  useEffect(() => {
-    fetch('/vidd.mp4', { method: 'HEAD' })
-      .then(res => setHasLogoVideo(res.ok))
-      .catch(() => setHasLogoVideo(false));
-  }, []);
 
 
   return (
@@ -66,28 +60,30 @@ export default function App() {
       {/* Header box with logo video */}
       <header className="pt-0 sm:pt-0 mt-6 sm:mt-8 pb-6 text-center select-none">
         <div className="mx-auto w-[320px] sm:w-[500px] max-w-[92vw] h-[200px] sm:h-[260px] rounded-2xl bg-white/8 border border-white/20 backdrop-blur-md overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_30px_60px_rgba(0,0,0,0.3)]">
-          {hasLogoVideo ? (
-            <video
-              src="/vidd.mp4"
-              className="w-full h-full object-contain rounded-2xl bg-white/8 backdrop-blur-md ring-1 ring-white/20 shadow-inner"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              poster="/new.jpeg"
-            />
-          ) : (
             <img src="/lo.png" className="w-full h-full object-contain rounded-2xl bg-white/8 backdrop-blur-md ring-1 ring-white/20 shadow-inner" alt="Logo" loading="eager" decoding="async" />
-          )}
-        </div>
+          </div>
         <div className="mt-2 text-xs sm:text-sm text-[#cfc191] tracking-wide">Bio‑Stimulant Registration Details</div>
       </header>
 
       {/* Main panel */}
       <main className="mx-auto max-w-5xl px-4 sm:px-6 pb-16">
-        {/* Product name card with manufacturer/marketing info */}
-        <section className="mx-auto max-w-3xl">
+        {/* Title of Bio Stimulant FIRST */}
+        <section className="mt-2">
+          <StarBorder as="div" className="w-full" color="cyan" speed="5s" thickness={2}>
+            <div className="flex items-start">
+              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#e8d8a6]/25 text-[#e8d8a6] mr-3 shadow-inner">
+                <span className="text-lg">⚗️</span>
+              </div>
+              <div className="flex-1">
+                <div className="text-[#d9c98f] text-sm">Tittle of Bio Stimulant:</div>
+                <div className="text-base sm:text-lg">{product?.specification || ''}</div>
+              </div>
+            </div>
+          </StarBorder>
+        </section>
+
+        {/* Product name card SECOND */}
+        <section className="mx-auto max-w-3xl mt-6">
           <div className="relative rounded-2xl bg-white/8 border border-white/20 backdrop-blur-md p-4 sm:p-6 flex items-center shadow-[0_20px_40px_rgba(0,0,0,0.25)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:-translate-y-0.5">
             <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-[#e8d8a6]/20 text-[#e8d8a6] mr-4 shadow-inner">
               <span className="text-2xl">🌿</span>
@@ -108,22 +104,11 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Gazette Notification:</div>
-                <div className="text-base sm:text-lg">SO:3922(E), Dated:12-09-2024</div>
+                <div className="text-base sm:text-lg">{product?.gazette || 'SO:3922(E), Dated: 12th September ,2024'}</div>
               </div>
             </div>
           </StarBorder>
 
-          <StarBorder as="div" className="w-full" color="cyan" speed="5s" thickness={2}>
-            <div className="flex items-start">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#e8d8a6]/25 text-[#e8d8a6] mr-3 shadow-inner">
-                <span className="text-lg">⚗️</span>
-              </div>
-              <div className="flex-1">
-                <div className="text-[#d9c98f] text-sm">Tittle of Bio Stimulant:</div>
-                <div className="text-base sm:text-lg">{product?.specification || ''}</div>
-              </div>
-            </div>
-          </StarBorder>
 
           <StarBorder as="div" className="w-full" color="cyan" speed="5s" thickness={2}>
             <div className="flex items-start">
@@ -132,7 +117,15 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Composition</div>
-                <div className="mt-1 text-sm sm:text-base text-white"></div>
+                {(product?.composition || []).length ? (
+                  <ul className="mt-1 text-sm sm:text-base text-white list-none pl-0 space-y-1">
+                    {(product?.composition || []).map((line, idx) => (
+                      <li key={idx}>{line}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <div className="mt-1 text-sm sm:text-base text-white"></div>
+                )}
               </div>
             </div>
           </StarBorder>

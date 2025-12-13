@@ -6,6 +6,17 @@
   color-scheme: light;
 }
 
+/* Increase global base font size for better readability */
+html {
+  font-size: 17px; /* default was 16px */
+}
+@media (min-width: 640px) { /* sm */
+  html { font-size: 18px; }
+}
+@media (min-width: 1024px) { /* lg */
+  html { font-size: 18.5px; }
+}
+
 body {
   font-family: 'Inter', system-ui, sans-serif;
   min-height: 100vh;
