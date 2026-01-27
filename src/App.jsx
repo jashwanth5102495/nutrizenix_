@@ -190,11 +190,9 @@ export default function App() {
                 <span className="text-lg">🏭</span>
               </div>
               <div className="flex-1">
-                <div className="text-[#d9c98f] text-sm">Manufactured By:</div>
-                <div className="text-white/90 text-sm sm:text-base">SP Agrotech Ltd, Plot No.G34, Katphal, M.I.D.C., Baramati, Pune, Maharashtra - 413102</div>
-
-                <div className="mt-3 text-[#d9c98f] text-sm">Marketed By:</div>
-                <div className="text-white/90 text-sm sm:text-base">CTS NO. 1120/4 complex lndi Road appo :Neelkanteshwar Kalyan Mantap Vijayapur -586101</div>
+                <div className="text-[#d9c98f] text-sm">Manufactured By and Marketed By:</div>
+                <div className="text-white/90 text-sm sm:text-base font-semibold">Nutrizenix, SAKASH AGRO TECH PVT. LTD.</div>
+                <div className="text-white/90 text-sm sm:text-base">Site No 25,Survey No. 121,Yelachaguppe Village, Gridpalya, Gokula Road, Tavarekere Hobli, Bangalore South - 562130</div>
               </div>
             </div>
           </StarBorder>
@@ -204,9 +202,8 @@ export default function App() {
                 <span className="text-lg">📞</span>
               </div>
               <div className="flex-1">
-                <div className="text-[#d9c98f] text-sm">Customer Care</div>
-                <div className="text-white/90 text-sm sm:text-base">Maharashtra customer care no. 9129613434</div>
-                <div className="text-white/90 text-sm sm:text-base">Karnataka customer care no. 8446998943</div>
+                <div className="text-[#d9c98f] text-sm">Contact</div>
+                <div className="text-white/90 text-sm sm:text-base">+91 80887 73868</div>
               </div>
             </div>
           </StarBorder>
