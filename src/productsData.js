@@ -29,7 +29,7 @@ export const PRODUCTS = [
     ] 
   },
   { 
-    brand: 'HUMIGROW+', 
+    brand: 'HUMIGROW+ new', 
     specification: '(11) Humic acid and Fulvic acid 19.5 % (Liquid)', 
     category: 'Humic and Fulvic Acid and their derivatives',
     crops: ['Chilli', 'Potato', 'Rice', 'Cotton', 'Soybean', 'Cumin', 'Onion'], 
@@ -217,26 +217,95 @@ export const PRODUCTS = [
 ];
 
 export const SLUG_TO_BRAND = {
+  // HI POWER
   'HI POWER': 'HI POWER',
   'HI%20POWER': 'HI POWER',
+  'hi power': 'HI POWER',
+  'HIPOWER': 'HI POWER',
+  'hipower': 'HI POWER',
+  
+  // Kalpam
   'Kalpam': 'Kalpam',
   'kalpam': 'Kalpam',
+  'KALPAM': 'Kalpam',
+  
+  // HUMIGROW+ new (handles + as space, missing +, encoded +, etc.)
   'HUMIGROW+': 'HUMIGROW+ new',
   'humigrow+': 'HUMIGROW+ new',
+  'HUMIGROW': 'HUMIGROW+ new',
+  'humigrow': 'HUMIGROW+ new',
+  'HUMIGROW ': 'HUMIGROW+ new',
+  'humigrow ': 'HUMIGROW+ new',
   'HUMIGROW+ new': 'HUMIGROW+ new',
+  'humigrow+ new': 'HUMIGROW+ new',
+  'HUMIGROW new': 'HUMIGROW+ new',
+  'humigrow new': 'HUMIGROW+ new',
+  'HUMIGROW  new': 'HUMIGROW+ new',
+  'humigrow  new': 'HUMIGROW+ new',
+  'HUMIGROW%2B': 'HUMIGROW+ new',
+  'HUMIGROW%2Bnew': 'HUMIGROW+ new',
+  'HUMIGROW%2B%20new': 'HUMIGROW+ new',
   'HUMIGROW+%20new': 'HUMIGROW+ new',
+  
+  // SAMPURNA
   'SAMPURNA': 'SAMPURNA',
   'sampurna': 'SAMPURNA',
-  'AMIGROW+': 'AMIGROW+',
-  'amigrow+': 'AMIGROW+',
+  
+  // AMIGROW+ new (handles + as space, missing +, encoded +, etc.)
+  'AMIGROW+': 'AMIGROW+ new',
+  'amigrow+': 'AMIGROW+ new',
+  'AMIGROW': 'AMIGROW+ new',
+  'amigrow': 'AMIGROW+ new',
+  'AMIGROW ': 'AMIGROW+ new',
+  'amigrow ': 'AMIGROW+ new',
+  'AMIGROW+ new': 'AMIGROW+ new',
+  'amigrow+ new': 'AMIGROW+ new',
+  'AMIGROW new': 'AMIGROW+ new',
+  'amigrow new': 'AMIGROW+ new',
+  'AMIGROW  new': 'AMIGROW+ new',
+  'amigrow  new': 'AMIGROW+ new',
+  'AMIGROW+new': 'AMIGROW+ new',
+  'amigrow+new': 'AMIGROW+ new',
+  'AMIGROW%2B': 'AMIGROW+ new',
+  'AMIGROW%2Bnew': 'AMIGROW+ new',
+  'AMIGROW%2B%20new': 'AMIGROW+ new',
+  'AMIGROW+%20new': 'AMIGROW+ new',
+  
+  // SAMPURNA 4G
   'SAMPURNA 4G': 'SAMPURNA 4G',
   'SAMPURNA%204G': 'SAMPURNA 4G',
+  'sampurna 4g': 'SAMPURNA 4G',
+  'SAMPURNA4G': 'SAMPURNA 4G',
+  'sampurna4g': 'SAMPURNA 4G',
+  
+  // NUTRI GOLD
   'NUTRI GOLD': 'NUTRI GOLD',
   'NUTRI%20GOLD': 'NUTRI GOLD',
+  'nutri gold': 'NUTRI GOLD',
+  'NUTRIGOLD': 'NUTRI GOLD',
+  'nutrigold': 'NUTRI GOLD',
+  
+  // PRIDE – X (special dash character)
   'PRIDE – X': 'PRIDE – X',
   'PRIDE%20%E2%80%93%20X': 'PRIDE – X',
+  'PRIDE - X': 'PRIDE – X',
+  'PRIDE-X': 'PRIDE – X',
+  'pride - x': 'PRIDE – X',
+  'pride-x': 'PRIDE – X',
+  'PRIDE X': 'PRIDE – X',
+  'pride x': 'PRIDE – X',
+  'PRIDEX': 'PRIDE – X',
+  'pridex': 'PRIDE – X',
+  
+  // S - 400
   'S - 400': 'S - 400',
   'S%20-%20400': 'S - 400',
+  'S-400': 'S - 400',
+  's-400': 'S - 400',
+  'S 400': 'S - 400',
+  's 400': 'S - 400',
+  'S400': 'S - 400',
+  's400': 'S - 400',
 };
 
 export function findProductBySlug(slug) {
