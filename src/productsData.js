@@ -92,7 +92,8 @@ export const PRODUCTS = [
     ] 
   },
   { 
-    brand: 'AMIGROW+', 
+    brand: 'AMIGROW+ new', 
+    displayName: 'AMIGROW+',
     specification: '(20) Protein hydrolysate 18% (Animal source) (Liquid)', 
     category: 'Protein Hydrolysates and Amino Acids',
     crops: ['Paddy', 'Chilli', 'Tomato', 'Grape', 'Cotton', 'Black gram'], 
@@ -220,8 +221,10 @@ export const SLUG_TO_BRAND = {
   'HI%20POWER': 'HI POWER',
   'Kalpam': 'Kalpam',
   'kalpam': 'Kalpam',
-  'HUMIGROW+': 'HUMIGROW+',
-  'humigrow+': 'HUMIGROW+',
+  'HUMIGROW+': 'HUMIGROW+ new',
+  'humigrow+': 'HUMIGROW+ new',
+  'HUMIGROW+ new': 'HUMIGROW+ new',
+  'HUMIGROW+%20new': 'HUMIGROW+ new',
   'SAMPURNA': 'SAMPURNA',
   'sampurna': 'SAMPURNA',
   'AMIGROW+': 'AMIGROW+',
