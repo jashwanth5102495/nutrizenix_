@@ -30,6 +30,7 @@ export const PRODUCTS = [
   },
   { 
     brand: 'HUMIGROW+ new', 
+    displayName: 'HUMIGROW+',
     specification: '(11) Humic acid and Fulvic acid 19.5 % (Liquid)', 
     category: 'Humic and Fulvic Acid and their derivatives',
     crops: ['Chilli', 'Potato', 'Rice', 'Cotton', 'Soybean', 'Cumin', 'Onion'], 
