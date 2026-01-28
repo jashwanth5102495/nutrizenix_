@@ -10,7 +10,7 @@ export default function App() {
 
   useEffect(() => {
     const oldSlug = '/HUMICID';
-    const newSlug = '/SP%20MAGIC';
+    const newSlug = '/HI%20POWER';
     const current = window.location.pathname;
     if (current === oldSlug || current === '/' || current === '') {
       window.history.replaceState(null, '', newSlug);
@@ -83,7 +83,7 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-xs sm:text-sm">Product Name:</div>
-                <div className="text-white text-xl sm:text-2xl font-semibold tracking-wide">{product?.displayName || product?.brand || 'SP MAGIC'}</div>
+                <div className="text-white text-xl sm:text-2xl font-semibold tracking-wide">{product?.displayName || product?.brand || 'HI POWER'}</div>
               </div>
             </div>
           </StarBorder>
@@ -190,7 +190,7 @@ export default function App() {
                 <span className="text-lg">🏭</span>
               </div>
               <div className="flex-1">
-                <div className="text-[#d9c98f] text-sm">Manufactured By and Marketed By:</div>
+                <div className="text-[#d9c98f] text-sm">Manufactured and Marketed By:</div>
                 <div className="text-white/90 text-sm sm:text-base font-semibold">Nutrizenix, SAKASH AGRO TECH PVT. LTD.</div>
                 <div className="text-white/90 text-sm sm:text-base">Site No 25,Survey No. 121,Yelachaguppe Village, Gridpalya, Gokula Road, Tavarekere Hobli, Bangalore South - 562130</div>
               </div>
