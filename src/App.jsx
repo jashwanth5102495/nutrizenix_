@@ -191,7 +191,7 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Manufactured and Marketed By:</div>
-                <div className="text-white/90 text-sm sm:text-base font-semibold">Nutrizenix, SAKASH AGRO TECH PVT. LTD.</div>
+                <div className="text-white/90 text-sm sm:text-base font-semibold">SAKASH AGRO TECH PVT. LTD.</div>
                 <div className="text-white/90 text-sm sm:text-base">Site No 25,Survey No. 121,Yelachaguppe Village, Gridpalya, Gokula Road, Tavarekere Hobli, Bangalore South - 562130</div>
               </div>
             </div>
@@ -202,7 +202,7 @@ export default function App() {
                 <span className="text-lg">📞</span>
               </div>
               <div className="flex-1">
-                <div className="text-[#d9c98f] text-sm">Contact</div>
+                <div className="text-[#d9c98f] text-sm">Customer Care</div>
                 <div className="text-white/90 text-sm sm:text-base">+91 80887 73868</div>
               </div>
             </div>
